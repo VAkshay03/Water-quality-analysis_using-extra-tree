@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Navigation Menu</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body style */
+    body {
+      font-family: Arial, sans-serif;
+      padding-top: 60px; /* Avoid navbar overlap */
+      height: 2000px; /* Ensure scrolling */
+      background-color: #f4f4f4; /* Light background */
+    }
+
+    /* Navbar styling */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      padding: 15px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      z-index: 1000; /* Make sure navbar is on top */
+      transition: background-color 0.3s ease; /* Smooth transition for color change */
+    }
+
+    /* Navbar menu */
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px 15px;
+      transition: color 0.3s ease;
+    }
+
+    /* Hover effect for links */
+    nav ul li a:hover {
+      background-color: #444;
+      color: white;
+    }
+
+    /* Change styles when scrolled */
+    .scrolled {
+      background-color: #222; /* Dark background on scroll */
+    }
+
+    .scrolled a {
+      color: #ff6f61; /* Change link color on scroll */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <section class="content">
+    <h1>Scroll Down to See the Menu Change Color</h1>
+    <p>Keep scrolling to see the effect. The navbar should change color after you scroll past 50px.</p>
+  </section>
+
+  <script>
+    // Get the navbar element
+    const navbar = document.getElementById('navbar');
+
+    // Listen for scroll event
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled'); // Add the 'scrolled' class when scrolled past 50px
+      } else {
+        navbar.classList.remove('scrolled'); // Remove the 'scrolled' class when above 50px
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Quality Prediction</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body 
+        {
+
+            background-image: url('https://cdn.pixabay.com/photo/2014/12/24/05/02/drop-of-water-578897_1280.jpg');
+
+            background-color: #fff;
+        }
+        .container 
+        {
+            margin-top: 50px;
+        }
+        .result-card 
+        {
+            margin-top: 30px;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(144, 86, 86, 0.2).2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-center">
+            <h1>Water Quality Prediction</h1>
+            <p class="lead">Enter the water quality parameters below to get the prediction.</p>
+        </div>
+        <form method="POST" action="/predict">
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="ph">pH</label>
+                    <input type="number" step="any" class="form-control" id="ph" name="ph" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="hardness">Hardness</label>
+                    <input type="number" step="any" class="form-control" id="hardness" name="hardness" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="solids">Solids</label>
+                    <input type="number" step="any" class="form-control" id="solids" name="solids" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="chloramines">Chloramines</label>
+                    <input type="number" step="any" class="form-control" id="chloramines" name="chloramines" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="sulphate">Sulphate</label>
+                    <input type="number" step="any" class="form-control" id="sulphate" name="sulphate" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="conductivity">Conductivity</label>
+                    <input type="number" step="any" class="form-control" id="conductivity" name="conductivity" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="organic_carbon">Organic Carbon</label>
+                    <input type="number" step="any" class="form-control" id="organic_carbon" name="organic_carbon" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="Trihalomethanes">Trihalomethanes</label>
+                    <input type="number" step="any" class="form-control" id="Trihalomethanes" name="Trihalomethanes" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="Turbidity">Turbidity</label>
+                    <input type="number" step="any" class="form-control" id="Turbidity" name="Turbidity" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Predict</button>
+        </form>
+
+        {% if prediction_text %}
+        <div class="result-card">
+            <h3>Prediction Result</h3>
+            <p class="lead">{{ prediction_text }}</p>
+        </div>
+        {% endif %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
