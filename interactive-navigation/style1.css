@@ -5,13 +5,6 @@
     box-sizing: border-box;
 }
 
-/* Body styling */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-}
-
 /* Navigation Menu Styling */
 nav {
     position: fixed;
@@ -20,7 +13,7 @@ nav {
     background-color: #333;
     padding: 10px 0;
     z-index: 1000;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 nav ul {
@@ -37,14 +30,11 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    padding: 10px;
-    display: block;
     transition: color 0.3s ease;
 }
 
-/* Hover Effect */
 nav ul li a:hover {
-    color: #FFD700; /* Change to gold on hover */
+    color: #FFD700; /* Gold color on hover */
 }
 
 /* Scroll Effects */
@@ -52,19 +42,19 @@ nav ul li a:hover {
     background-color: #111; /* Darker background when scrolled */
 }
 
+/* Section Styling */
 section {
     padding: 100px 20px;
     height: 100vh;
-    background-color: #fff;
-    margin-top: 60px; /* Avoid content overlap with fixed navbar */
+    text-align: center;
 }
 
 section h1 {
-    font-size: 2.5em;
+    font-size: 2em;
     margin-bottom: 20px;
 }
 
 section p {
     font-size: 1.2em;
-    color: #333;
+    margin-top: 10px;
 }

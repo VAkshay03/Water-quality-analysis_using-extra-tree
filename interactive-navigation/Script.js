@@ -3,10 +3,9 @@ const navbar = document.getElementById("navbar");
 
 // Listen for the scroll event
 window.addEventListener("scroll", function() {
-    // Add 'scrolled' class when scrolling down 50px or more
     if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
+        navbar.classList.add("scrolled"); // Add class when scrolled
     } else {
-        navbar.classList.remove("scrolled");
+        navbar.classList.remove("scrolled"); // Remove class when at the top
     }
 });
